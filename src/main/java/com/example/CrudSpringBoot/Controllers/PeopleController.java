@@ -2,7 +2,7 @@ package com.example.CrudSpringBoot.Controllers;
 
 
 import com.example.CrudSpringBoot.Model.User;
-import com.example.CrudSpringBoot.Service.UserService;
+import com.example.CrudSpringBoot.Service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PeopleController {
 
 
-    private final UserService userService;
+    private final UserServiceImp userServiceImp;
 
     @Autowired
-    public PeopleController(UserService userService) {
-        this.userService = userService;
+    public PeopleController(UserServiceImp userServiceImp) {
+        this.userServiceImp = userServiceImp;
     }
 
     @GetMapping("/")
     public String getAllUsers(Model model) {
-        model.addAttribute("users", userService.getAllUsers());
+        model.addAttribute("users", userServiceImp.findAll());
         return "index";
     }
 
@@ -35,26 +35,26 @@ public class PeopleController {
 
     @PostMapping("/adduser")
     public String addUser(@ModelAttribute("user") User user) {
-        userService.saveUser(user);
+        userServiceImp.save(user);
         return "redirect:/";
     }
 
     @GetMapping("/deleteUser")
     public String deleteUser(@RequestParam("id") long id) {
-        userService.deleteById(id);
+        userServiceImp.delete(id);
         return "redirect:/";
     }
 
 
     @GetMapping("/updateuser")
     public String UpdateUserForm(@RequestParam("id") long id, Model model) {
-        model.addAttribute("user", userService.getUserById(id));
+        model.addAttribute("user", userServiceImp.findById(id));
         return "updateuser";
     }
 
     @PostMapping("/updateuser")
     public String updateUser(@ModelAttribute("user") User user) {
-        userService.updateUser(user);
+        userServiceImp.update(user);
         return "redirect:/";
     }
 
