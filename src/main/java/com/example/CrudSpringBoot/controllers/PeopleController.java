@@ -1,8 +1,8 @@
-package com.example.CrudSpringBoot.Controllers;
+package com.example.CrudSpringBoot.controllers;
 
 
-import com.example.CrudSpringBoot.Model.User;
-import com.example.CrudSpringBoot.Service.UserServiceImp;
+import com.example.CrudSpringBoot.model.User;
+import com.example.CrudSpringBoot.service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

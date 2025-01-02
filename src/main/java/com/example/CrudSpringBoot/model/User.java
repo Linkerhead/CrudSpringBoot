@@ -1,4 +1,4 @@
-package com.example.CrudSpringBoot.Model;
+package com.example.CrudSpringBoot.model;
 
 import jakarta.persistence.*;
 

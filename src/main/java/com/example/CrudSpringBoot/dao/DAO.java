@@ -1,6 +1,6 @@
-package com.example.CrudSpringBoot.DAO;
+package com.example.CrudSpringBoot.dao;
 
-import com.example.CrudSpringBoot.Model.User;
+import com.example.CrudSpringBoot.model.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;

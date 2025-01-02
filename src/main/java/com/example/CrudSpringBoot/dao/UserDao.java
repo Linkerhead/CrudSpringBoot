@@ -1,6 +1,6 @@
-package com.example.CrudSpringBoot.DAO;
+package com.example.CrudSpringBoot.dao;
 
-import com.example.CrudSpringBoot.Model.User;
+import com.example.CrudSpringBoot.model.User;
 
 import java.util.List;
 

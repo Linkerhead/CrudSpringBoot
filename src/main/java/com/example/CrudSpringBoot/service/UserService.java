@@ -1,6 +1,6 @@
-package com.example.CrudSpringBoot.Service;
+package com.example.CrudSpringBoot.service;
 
-import com.example.CrudSpringBoot.Model.User;
+import com.example.CrudSpringBoot.model.User;
 
 import java.util.List;
 
